@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Trello App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1 id="h1">Trello App</h1>
@@ -13,13 +14,11 @@
             <h2 id="h2">Trello List </h2>
             <div id="todo" id="list" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div class="add-card">
-                <input type="text" id="search" placeholder="Enter a task...">
+                <input type="text" id="search" placeholder="Enter a task..." onkeydown="handleKeyPress(event, 'todo')">
                 <button onclick="addCard('todo')">Add List</button>
             </div>
         </div>
     </div>
 
-    <script src="./app.js"></script>
 </body>
 </html>
-
