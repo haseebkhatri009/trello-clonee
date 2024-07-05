@@ -1,3 +1,4 @@
+
 function addCard(listId) {
     const inputElement = document.getElementById(`search`);
     const cardText = inputElement.value.trim();
@@ -8,7 +9,9 @@ function addCard(listId) {
     }
 
     const cardId = `card_${Date.now()}`;
-    const cardHTML = `<div id="${cardId}" class="card" draggable="true" ondragstart="drag(event)">${cardText}</div>`;
+    const cardHTML = `<div id="${cardId}" class="card" draggable="true" ondragstart="drag(event)">${cardText}
+    <button class="delete-btn" onclick="deleteCard('${cardId}')">Delete</button>
+    </div>`;
 
     const listElement = document.getElementById(listId);
     listElement.insertAdjacentHTML('beforeend', cardHTML);
@@ -27,4 +30,13 @@ function drop(event) {
     const card = document.getElementById(cardId);
     const newList = event.target.closest('#list');
     newList.appendChild(card);
+}
+function handleKeyPress(event, listId) {
+    if (event.key === 'Enter') {
+        addCard(listId);
+    }
+}
+function deleteCard(cardId) {
+    const card = document.getElementById(cardId);
+    card.remove();
 }
