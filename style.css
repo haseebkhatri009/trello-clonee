@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -78,4 +79,20 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: move;
+}
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute;
+    left: 54%;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
 }
